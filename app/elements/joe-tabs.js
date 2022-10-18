@@ -3,7 +3,7 @@ import { useElementName } from "enhance-remix";
 /**
  * @type {import("@enhance/types").EnhanceElemFn}
  */
-export default function Tabs({ html, state }) {
+export default function Tabs({ html }) {
   const elementName = useElementName(Tabs);
 
   return html`

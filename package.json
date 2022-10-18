@@ -1,0 +1,19 @@
+{
+  "name": "joe-wc",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=development bun run ./index.js",
+    "start": "NODE_ENV=production bun run ./index.js"
+  },
+  "devDependencies": {
+    "@enhance/types": "^0.4.0",
+    "bun-livereload": "^1.0.3",
+    "bun-types": "^0.1.0"
+  },
+  "dependencies": {
+    "awsm.css": "^3.0.7",
+    "enhance-remix": "^0.0.7",
+    "enhance-remix-bun": "^0.0.7"
+  }
+}

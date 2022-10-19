@@ -37,7 +37,7 @@ function createTabsElement() {
         }
 
         tab.addEventListener("keydown", this.handleKeyboard.bind(this));
-        this.addEventListener("click", this.handleClick.bind(this));
+        tab.addEventListener("click", this.handleClick.bind(this));
 
         if (tab.getAttribute("aria-selected") == "true") {
           activeTab = tab;

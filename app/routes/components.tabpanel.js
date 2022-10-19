@@ -126,6 +126,10 @@ joe-tabpanel [role="tablist"] {
   border-bottom: 1px solid black;
 }
 
+joe-tabpanel [role="tab"][aria-selected="true"] {
+  box-shadow: 0 0 0 2px green;
+}
+
 joe-tabpanel div[role="tabpanel"] {
   display: none;
   padding: 1rem;

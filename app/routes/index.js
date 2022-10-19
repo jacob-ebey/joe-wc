@@ -17,7 +17,7 @@ export default function Index({ html }) {
 
       <ul>
         <li>
-          <a href="/components/tabs">Tabs</a>
+          <a href="/components/tabpanel">Tabpanel</a>
         </li>
       </ul>
     </main>

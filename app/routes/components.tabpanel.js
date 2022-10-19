@@ -17,8 +17,8 @@ export default function Tabs({ html }) {
 
   return html`
     <main>
-      <h1>Tabs</h1>
-      <p>An accessible tabs component.</p>
+      <h1>Tabpanel</h1>
+      <p>An accessible tabpanel component.</p>
 
       <h2>Demos</h2>
 
@@ -34,6 +34,12 @@ export default function Tabs({ html }) {
       <h4>Code</h4>
       <pre><code>${escapeHtml(automaticExample)}</pre></code>
 
+      <h3>Default Selected</h3>
+      <h4>Example</h4>
+      ${defaultSelected}
+      <h4>Code</h4>
+      <pre><code>${escapeHtml(defaultSelected)}</pre></code>
+
       <h3>Demo Styles</h3>
       <pre><code>${Styles(elementName)}</pre></code>
     </main>
@@ -47,7 +53,7 @@ export default function Tabs({ html }) {
 }
 
 const manualExample = /*html*/ `
-<joe-tabs>
+<joe-tabpanel>
   <div role="tablist">
     <button role="tab" aria-controls="tab-1" aria-selected="true">
       Tab 1
@@ -64,11 +70,11 @@ const manualExample = /*html*/ `
   <div role="tabpanel" id="tab-3" tabindex="0">
     <p>Tab 3 content</p>
   </div>
-</joe-tabs>
+</joe-tabpanel>
 `.trim();
 
 const automaticExample = /*html*/ `
-<joe-tabs automatic>
+<joe-tabpanel automatic>
   <div role="tablist">
     <button role="tab" aria-controls="tab-1" aria-selected="true">
       Tab 1
@@ -85,27 +91,48 @@ const automaticExample = /*html*/ `
   <div role="tabpanel" id="tab-3" tabindex="0">
     <p>Tab 3 content</p>
   </div>
-</joe-tabs>
+</joe-tabpanel>
 `.trim();
 
-function Styles(elementName) {
+const defaultSelected = /*html*/ `
+<joe-tabpanel>
+  <div role="tablist">
+    <button role="tab" aria-controls="tab-1">Tab 1</button>
+    <button role="tab" aria-controls="tab-2" aria-selected="true">
+      Tab 2
+    </button>
+    <button role="tab" aria-controls="tab-3">Tab 3</button>
+  </div>
+  <div role="tabpanel" id="tab-1" tabindex="0">
+    <p>Tab 1 content</p>
+  </div>
+  <div role="tabpanel" id="tab-2" tabindex="0" aria-selected="true">
+    <p>Tab 2 content</p>
+  </div>
+  <div role="tabpanel" id="tab-3" tabindex="0">
+    <p>Tab 3 content</p>
+  </div>
+</joe-tabpanel>
+`.trim();
+
+function Styles() {
   return /*css*/ `
-${elementName} joe-tabs {
+joe-tabpanel {
   display: block;
   border: 1px solid black;
 }
 
-${elementName} [role="tablist"] {
+joe-tabpanel [role="tablist"] {
   border-bottom: 1px solid black;
 }
 
-${elementName} [role="tabpanel"][aria-selected="true"] {
-  display: inherit;
-}
-
-${elementName} [role="tabpanel"] {
+joe-tabpanel div[role="tabpanel"] {
   display: none;
   padding: 1rem;
+}
+
+joe-tabpanel [role="tabpanel"][aria-selected="true"] {
+  display: block;
 }
 `.trim();
 }
